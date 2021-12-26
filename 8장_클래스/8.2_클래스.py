@@ -1,36 +1,20 @@
-class Book():
-    author = ""
-    title = ""
-    publisher = ""
-    date = ""
+### 클래스 상속 ###
 
+class JSS:
+    def __init__(self):
+        self.name = input("이름: ")
+        self.age =  input("나이: ")
+    def show(self):
+        print("저의 이름은 {}이고, 나이는 {}세 입니다.".format(self.name, self.age))
 
-Book.author = "김씨"
-Book.title = "파이썬시작하기"
-Book.publisher = "김북스"
-Book.date = "2021-09-16"
+class JSS2(JSS):
+    def __init__(self):
+        super().__init__()
+        # super함수는 부모 클래스의 __init__()을 가리키는 변수
+        # 즉 JSS클래스의 __init__()을 가리키는 변수임
+        self.gender = input("성별: ")
+    def show(self):
+        print("저의 이름은 {}, 성별은 {}자, 나이는 {}세 입니다.".format(self.name, self.gender, self.age))
 
-print(Book.author)  # 김씨
-print(Book.title)  # 파이썬시작하기
-print(Book.publisher)  # 김북스
-print(Book.date)  # 2021-09-16
-
-
-class Book():
-    author = ""
-    title = ""
-    publisher = ""
-    date = ""
-
-
-book = Book()
-# book은 Book클래스의 인스턴스
-book.author = "김씨"
-book.title = "파이썬시작하기"
-book.publisher = "김북스"
-book.date = "2021-09-16"
-
-print(book.author)  # 김씨
-print(book.title)  # 파이썬시작하기
-print(book.publisher)  # 김북스
-print(book.date)  # 2021-09-16
+a = JSS2()
+a.show()
